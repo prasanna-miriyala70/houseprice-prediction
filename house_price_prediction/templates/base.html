@@ -1,0 +1,256 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>House Price Prediction</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+   <!-- Custom Styles -->
+   <style>
+    /* General Reset */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: linear-gradient(120deg, #a6c0fe, #f68084); /* pretty background */
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    /* Glassy Header */
+    #header {
+      height: 60px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #logo h1 a {
+      font-weight: bold;
+      font-size: 26px;
+      color: #000;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+    }
+
+    .navbar ul li {
+      margin: 0 10px;
+    }
+
+    .navbar ul li a {
+      padding: 8px 12px;
+      font-size: 14px;
+      color: #011939 !important;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .navbar ul li a:hover {
+      color: #08357a !important;
+    }
+
+    /* Hero Section */
+    #hero {
+      width: 100%;
+      height: 100vh;
+      background: url("{% static 'img/dani.jpg' %}") no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+      padding-top: 60px; /* offset for fixed header */
+    }
+
+    #hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    #hero h2 {
+      font-size: 1.5rem;
+      margin-top: 15px;
+      max-width: 80%;
+    }
+
+    /* Glassy Footer */
+    .footer {
+      position: relative;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      padding: 10px 0;
+      color: #333;
+      text-align: center;
+      font-size: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .footer .credits a {
+      color: #011428;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer .credits a:hover {
+      text-decoration: underline;
+    }
+
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      background: #031834;
+      color: #fff;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 20px;
+      z-index: 999;
+    }
+
+    header, nav {
+      z-index: 1000;
+    }
+  </style>
+  
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+      <!-- Logo -->
+      <div id="logo">
+        <h1>
+          <a href="{% url 'index' %}" style="font-weight: bold; font-size: 30px; color: rgb(25, 24, 24); text-transform: uppercase;">
+            House Price Prediction
+          </a>
+        </h1>
+      </div>
+
+      <!-- Navbar -->
+      <nav id="navbar" class="navbar">
+        <ul class="d-flex list-unstyled mb-0">
+          <li class="mx-3">
+            <a class="nav-link scrollto" href="{% url 'index' %}">HOME</a>
+          </li>
+          <li class="mx-3">
+            <a class="nav-link scrollto" href="{% url 'AdminLogin' %}">ADMIN-LOGIN</a>
+          </li>
+          <li class="mx-3">
+            <a class="nav-link scrollto" href="{% url 'UserLogin' %}">USER-LOGIN</a>
+          </li>
+          <li class="mx-3">
+            <a class="nav-link scrollto" href="{% url 'UserRegister' %}">USER-REGISTER</a>
+          </li>
+        </ul>
+      </nav><!-- End Navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- Hero Section with Background -->
+  {% block contents %}
+  {% endblock %}
+  <section id="hero">
+    <div class="hero-container" data-aos="fade-in">
+      <!-- <h1>House Price Prediction</h1>
+      <h2>Helping developers and customers make informed decisions about the housing market.</h2> -->
+    </div>
+  </section>
+
+  <!-- Optional Main (for future content) -->
+  <main id="main">
+    <!-- Add content here if needed -->
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer class="footer" style="
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 10px 0;
+  color: #333;
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);">
+  
+  <div class="container">
+    <p>&copy; <b>House Price Prediction</b>. All rights reserved.</p>
+    <div class="credits">
+      Designed by <a href="#"><b>House Price Prediction Team</b></a>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Scroll to Top Button -->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

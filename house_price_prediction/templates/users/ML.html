@@ -1,0 +1,90 @@
+{% extends 'users/userbase.html' %}
+{% load static %}
+{% block contents %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ML page</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background: url("{% static 'img/dani.jpg' %}") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .blur-box {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            width: 70%;
+            margin: 100px auto;
+            overflow-y: auto;
+        }
+
+        table {
+            width: 100%;
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(200, 200, 200, 0.6);
+        }
+
+        h1 {
+            color: white;
+            text-shadow: 2px 2px 4px #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="blur-box">
+        <h1 align="center">ML Algorithm Accuracy</h1>
+        <table>
+            <tr>
+                <th>ALGORITHM</th>
+                <th>ACCURACY</th>                 
+            </tr>
+            <tr>
+                <td>LASSO_ACCURACY</td>
+                <td>{{accuracy.LASSO}}</td>
+            </tr>
+            <tr>
+                <td>DTR_ACCURACY</td>
+                <td>{{accuracy.DTR}}</td>                 
+            </tr>
+            <tr>
+                <td>XBR_ACCURACY</td>
+                <td>{{accuracy.XBR}}</td>                 
+            </tr>
+            <tr>
+                <td>RFR_ACCURACY</td>
+                <td>{{accuracy.RFR}}</td>                 
+            </tr>
+            <tr>
+                <td>ABR_ACCURACY</td>
+                <td>{{accuracy.ABR}}</td>                 
+            </tr>
+            <tr>
+                <td>GBR_ACCURACY</td>
+                <td>{{accuracy.GBR}}</td>                 
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+{% endblock %}

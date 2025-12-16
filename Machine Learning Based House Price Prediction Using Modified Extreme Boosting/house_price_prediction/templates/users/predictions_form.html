@@ -1,0 +1,89 @@
+{% extends 'users/userbase.html' %}
+{%block contents%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ML page</title>
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+</head>
+<body>
+<center>
+    <h1 align="center">Prediction Form</h1>
+    <p>
+        <!-- The Test Form Result is <h3><font color="RED">{{rslt}}</font> </h3> -->
+<h2 align="center" style="color:rgb(50, 19, 190);font-weight:bold;">The Test Form Result is: {{test_pred}}LACKS</h2>
+
+    </p>
+    <form action="{% url 'prediction' %}" method="post">
+        {% csrf_token %}
+    <table>
+        <thead>
+        <tr>
+            <th>Fields</th>
+            <th>Values</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <!-- location,sqft,bath,bhk -->
+            <td>location</td>
+            <td>
+                <select name="location" id="location">
+                    <option value="Whitefield">Whitefield</option>
+                    <option value="Sarjapur  Road">Sarjapur  Road</option>
+                    <option value="Electronic City">Electronic City</option>
+                    <option value="Kanakpura Road">Kanakpura Road</option>
+                    <!-- <option value="other">Others</option> -->
+
+                </select>
+            </td>
+        </tr>
+         <tr>
+            <td>sqft</td>
+            <td><input type="number" min="1" max="2000" step="0.1" class="form-control" name="sqft" required></td>
+        </tr>
+        <tr>
+            <td>bath</td>
+            <td><input type="number"  placeholder="range between 1 to 10" min="1" max="10" class="form-control" name="bath" required></td>
+        </tr>
+        </tr>
+         <tr>
+            <td>bhk</td>
+            <td><input type="number"  placeholder="range between 1 to 10" min="1" max="10" class="form-control" name="bhk" required></td>
+            
+        </tr>
+        <td>
+                <input type="submit" value="Predict Result" class="form-control">
+        </td>
+        </tr>
+
+        </tbody>
+    </table>
+</form>
+
+
+</center>
+</body>
+</html>
+
+
+
+{%endblock%}

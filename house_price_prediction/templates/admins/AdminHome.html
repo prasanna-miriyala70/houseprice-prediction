@@ -1,0 +1,83 @@
+{% extends 'admins/adminbase.html' %}
+{% block contents %}
+<style>
+  #intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+
+  .intro-text {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 50px 70px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    animation: fadeInUp 1.2s ease-out;
+    color: #004d4d;
+    max-width: 500px;
+  }
+
+  .intro-text h3 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    animation: textGlow 2s ease-in-out infinite alternate;
+  }
+
+  .intro-text p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    color: #333;
+  }
+
+  .btn-get-started {
+    background: teal;
+    color: white;
+    padding: 12px 30px;
+    font-size: 14px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-get-started:hover {
+    background: #007777;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes textGlow {
+    0% {
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+    100% {
+      text-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+    }
+  }
+</style>
+
+<section id="intro">
+  <div class="intro-text">
+    <h3>Welcome to Admin Homepage</h3>
+    <p>Manage users, control content, and track everything from here.</p>
+    <a href="#" class="btn-get-started">Get Started</a>
+  </div>
+</section>
+{% endblock %}

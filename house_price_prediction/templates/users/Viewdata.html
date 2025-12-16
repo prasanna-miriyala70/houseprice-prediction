@@ -1,0 +1,65 @@
+{% extends 'users/userbase.html' %}
+{% load static %}
+{% block contents %}
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: url("{% static 'img/dani.jpg' %}") no-repeat center center fixed;
+    background-size: cover;
+    overflow: auto;
+  }
+
+  h1 {
+    text-align: center;
+    color: white;
+    margin-top: 50px;
+    text-shadow: 2px 2px 4px #000;
+  }
+
+  .table-container {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 60px auto;
+    width: 95%;
+    max-width: 1200px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    color: black;
+  }
+
+  td, th {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: left;
+  }
+
+  tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+
+  th {
+    background-color: rgba(0, 128, 128, 0.5);
+    color: white;
+  }
+</style>
+
+<h1>RAW DATASET</h1>
+<div class="table-container">
+  {{ data|safe }}
+</div>
+
+{% endblock %}

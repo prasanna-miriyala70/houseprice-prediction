@@ -1,0 +1,53 @@
+{% extends 'admins/adminbase.html'%}
+{%block contents%}
+
+ <section id="intro">
+
+    <div class="intro-text">
+
+      <p><h3 align="center">View RegisterUser Details</h3></p>
+      <table class="table table-bordered bg-light text-dark">
+    <thead>
+      <tr style="color:teal">
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Login ID</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Locality</th>
+        <th>Status</th>
+        <th>Activate</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in data %}
+                                            <tr style="color: brown">
+                                                <td>{{forloop.counter}}</td>
+                                                <td>{{i.name}}</td>
+                                                <td>{{i.loginid}}</td>
+                                                <td>{{i.mobile}}</td>
+                                                <td>{{i.email}}</td>
+                                                <td>{{i.locality}}</td>
+                                                <td>{{i.status}}</td>
+
+                                                {% if i.status == 'waiting' %}
+                                                <td><a class="btn-link" href="/ActivaUsers/?uid={{ i.id }}"
+                                                       style="color:DARKBLUE">Activate</a>
+                                                       /
+                                                       <a class="btn-link" href="/DeleteUsers/?uid={{ i.id }}"
+                                                       style="color:DARKBLUE">Delete</a></td>
+                                                {% else %}
+                                                <td> Activated</td>
+                                                <td><a class="btn-link" href="/DeleteUsers/?uid={{ i.id }}"
+                                                  style="color:DARKBLUE">Delete</a></td>
+                                                
+                                                {% endif %}
+                                            </tr>
+                                            {% endfor %}
+
+    </tbody>
+  </table>
+    </div>
+  </section>
+{%endblock%}

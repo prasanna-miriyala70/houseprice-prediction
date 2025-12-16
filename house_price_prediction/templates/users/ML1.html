@@ -1,0 +1,91 @@
+{% extends 'users/userbase.html' %}
+{%block contents%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta chaLR
+    <title>ML page</title>
+</head>
+<body>
+    <center>
+        <h3>LR</h3>
+    <table border="1">
+        <tr><td>LR_recall:</td><td>{{recall.LR}}</td> </tr>
+        <tr><td>LR_precision:</td><td>{{precision.LR}}</td> </tr>
+        <tr><td>LR_f1score:</td><td>{{f1score.LR}}</td> </tr>
+        <tr><td>LR_Accuracy:</td><td>{{accuracy.LR}}</td> </tr>
+        <!-- <tr><td>DECISION TREE_confusionmatrix:</td><td>{{confusionmatrix.DT}}</td> </tr> -->
+    </table>
+    </center>
+
+    <center>
+        <h3>LASSO</h3>
+    <table border="1">        
+        <tr><td>LASSO_Accuracy:</td><td>{{accuracy.LASSO}}</td> </tr>
+        <tr><td>LASSO_precision:</td><td>{{precision.LASSO}}</td> </tr>
+        <tr><td>LASSO_recall:</td><td>{{recall.LASSO}}</td> </tr>
+        <tr><td>LASSO_f1score:</td><td>{{f1score.LASSO}}</td> </tr>
+        <!-- <tr><td>KNN _confusionmatrix:</td><td>{{confusionmatrix.SVM}}</td> </tr> -->
+    </table>
+    </center>
+
+    <center>
+        <h3>DTR</h3>
+    <table border="1">        
+        <tr><td>DTR_Accuracy:</td><td>{{accuracy.DTR}}</td> </tr>
+        <tr><td>DTR_precision:</td><td>{{precision.DTR}}</td> </tr>
+        <tr><td>DTR_recall:</td><td>{{recall.DTR}}</td> </tr>
+        <tr><td>DTR_f1score:</td><td>{{f1score.DTR}}</td> </tr>
+        <!-- <tr><td>RF_confusionmatrix:</td><td>{{confusionmatrix.RF}}</td> </tr>  -->
+
+    </table>
+    </center>
+    <center>
+        <h3>RFR</h3>
+    <table border="1">        
+        <tr><td>RFR_Accuracy:</td><td>{{accuracy.RFR}}</td> </tr>
+        <tr><td>RFR_precision:</td><td>{{precision.RFR}}</td> </tr>
+        <tr><td>RFR_recall:</td><td>{{recall.RFR}}</td> </tr>
+        <tr><td>RFR_f1score:</td><td>{{f1score.RFR}}</td> </tr>
+        <!-- <tr><td>RF_confusionmatrix:</td><td>{{confusionmatrix.RF}}</td> </tr>        -->
+
+    </table>
+    </center>
+    <center>
+        <h3>ABR</h3>
+    <table border="1">        
+        <tr><td>ABR_Accuracy:</td><td>{{accuracy.ABR}}</td> </tr>
+        <tr><td>ABR_precision:</td><td>{{precision.ABR}}</td> </tr>
+        <tr><td>ABR_recall:</td><td>{{recall.ABR}}</td> </tr>
+        <tr><td>ABR_f1score:</td><td>{{f1score.ABR}}</td> </tr>
+        <!-- <tr><td>RF_confusionmatrix:</td><td>{{confusionmatrix.RF}}</td> </tr>        -->
+
+    </table>
+    </center>
+    <center>
+        <h3>GBR</h3>
+    <table border="1">        
+        <tr><td>GBR_Accuracy:</td><td>{{accuracy.GBR}}</td> </tr>
+        <tr><td>GBR_precision:</td><td>{{precision.GBR}}</td> </tr>
+        <tr><td>GBR_recall:</td><td>{{recall.GBR}}</td> </tr>
+        <tr><td>GBR_f1score:</td><td>{{f1score.GBR}}</td> </tr>
+        <!-- <tr><td>RF_confusionmatrix:</td><td>{{confusionmatrix.RF}}</td> </tr>        -->
+
+    </table>
+    </center>
+    <center>
+        <h3>XBR</h3>
+    <table border="1">        
+        <tr><td>XBR_Accuracy:</td><td>{{accuracy.XBR}}</td> </tr>
+        <tr><td>XBR_precision:</td><td>{{precision.XBR}}</td> </tr>
+        <tr><td>XBR_recall:</td><td>{{recall.XBR}}</td> </tr>
+        <tr><td>XBR_f1score:</td><td>{{f1score.XBR}}</td> </tr>
+        <!-- <tr><td>RF_confusionmatrix:</td><td>{{confusionmatrix.RF}}</td> </tr>        -->
+
+    </table>
+    </center>
+    
+</body>
+</html>
+
+{%endblock%}

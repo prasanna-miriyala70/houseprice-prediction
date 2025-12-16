@@ -1,0 +1,69 @@
+{% extends 'users/userbase.html' %}
+{%block contents%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>ML page</title>
+</head>
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 60%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+<body>
+    <center>
+       <table>
+                <tr>
+                  <th>ALGROTHEM</th>
+                  <th>ACCURACY</th>                 
+                </tr>
+                <tr>
+                  <td>LASSO_ACCURACY</td>
+                  <td>{{accuracy.LASSO}}</td>
+                  
+                </tr>
+                <tr>
+                    <td>DTR_ACCURACY</td>
+                    <td>{{accuracy.DTR}}</td>                 
+                    
+                </tr>
+                <tr>
+                    <td>XBR_ACCURACY</td>
+                    <td>{{accuracy.XBR}}</td>                 
+                    
+                </tr>
+                <tr>
+                    <td>RFR_ACCURACY</td>
+                    <td>{{accuracy.RFR}}</td>                 
+                    
+                </tr>
+                <tr>
+                    <td>ABR_ACCURACY</td>
+                    <td>{{accuracy.ABR}}</td>                 
+                    
+                </tr>
+                <tr>
+                    <td>GBR_ACCURACY</td>
+                    <td>{{accuracy.GBR}}</td>                 
+                    
+                </tr>
+              </table>      
+       
+    </center> 
+</body>
+</html>
+
+{%endblock%}
